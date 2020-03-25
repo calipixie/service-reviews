@@ -8,10 +8,8 @@ import styled from 'styled-components';
 
 
 const Header = styled.h3`
-  margin-bottom: 12px;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 16px;
-  margin-left: 20px;
 `;
 
 class App extends React.Component {
@@ -19,10 +17,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       restaurant: Math.floor(Math.random() * 100) + 1,
-      reviews: []
-    }
+      reviews: [],
+    };
   }
-  
+
   componentDidMount() {
     // this.getReviews();
     this.getReviewsByRestaurant(this.state.restaurant);
@@ -63,7 +61,7 @@ class App extends React.Component {
       <div>
         <Header>Recommended Reviews</Header>
         <SetRating restaurant={this.state.restaurant} postReview={this.postReview.bind(this)}/>
-        <ReviewList  reviews={this.state.reviews}/>
+        <ReviewList reviews={this.state.reviews}/>
       </div>
     );
   }
